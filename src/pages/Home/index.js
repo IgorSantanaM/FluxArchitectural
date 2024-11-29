@@ -26,10 +26,10 @@ import * as CartActions from '../../store/modules/cart/actions';
     this.setState({ products: data});
   }
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
 
-    addToCart(product);
+    addToCartRequest(id);
   }
 
   render(){
@@ -49,7 +49,7 @@ import * as CartActions from '../../store/modules/cart/actions';
   
             <button
              type="button"
-             onClick={() => this.handleAddProduct(product)}
+             onClick={() => this.handleAddProduct(product.id)}
             >
               
               <div>
